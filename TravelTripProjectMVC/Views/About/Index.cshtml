@@ -1,0 +1,30 @@
+﻿@using TravelTripProjectMVC.Models.Classes
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>About</h3>
+            @foreach (var item in Model)
+            {
+                <img src="@item.ImageUrl"  alt="no photo :(" />
+
+                <p>
+                    @item.Aciklama
+                </p>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+<!--
+    Onu kullanacağımız için Classes isimli klasöre ulaş dedik.
+    Daha sonra model isimli bir komut oluşturduk ve bu modele liste tutmasını ve değerlerin türünün Hakkimizda sınıfı olmasını söyledik.
+    MVC'de listemeleme işlemi için genellikle foreach döngüsü kullanılır. Döneceği/Elemanlarını gezeceği Model ise yukarıda gmail simgesiyle tanımladığımız model komutunun tuttuğu liste oluoyr.     
+-->
