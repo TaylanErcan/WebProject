@@ -161,6 +161,7 @@
     <Content Include="web2\css\bootstrap.css" />
     <Content Include="web2\css\style.css" />
     <Content Include="web2\images\avatar.png" />
+    <Content Include="web2\images\Food.jpg" />
     <Content Include="web2\images\icon3.png" />
     <Content Include="web2\images\logo.jpg" />
     <Content Include="web2\images\man.jpg" />
@@ -242,6 +243,7 @@
     <Content Include="Views\Default\About.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
