@@ -1,5 +1,5 @@
-﻿@using TravelTripProjectMVC.Models.Classes
-@model List<Blog>
+﻿
+@model TravelTripProjectMVC.Models.Classes.BlogComment
 @{
     ViewBag.Title = "BlogDetail";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -41,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="container">
                 <div class="col-md-8 single-main">
                     <div class="single-grid">
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Deger1)
                         {
                             <img src="@item.BlogImagePath" alt="No image" style="margin-bottom:20px;" />
                             <h2>@item.Title</h2>
@@ -53,28 +53,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
                     </div>
-                    <ul class="comment-list">
+                    @foreach (var y in Model.Deger2)
+                    {
+                        <ul class="comment-list">
 
-                        <li>
-                            <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
-                            <div class="desc">
-                                <p>Taylan Ercan: yorum yazacak...</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
+                            <li>
+                                <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+                                <div class="desc">
+                                    <p>@y.User_Name: @y.UserComment</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
 
-                    </ul>
-                    <ul class="comment-list">
-
-                        <li>
-                            <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
-                            <div class="desc">
-                                <p>Şeref Kerimoğlu: yorum yazacak...</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-
-                    </ul>
+                        </ul>
+                    }
+                    
+                    
                     <div class="content-form">
                         <h3>Leave a comment</h3>
                         <form>

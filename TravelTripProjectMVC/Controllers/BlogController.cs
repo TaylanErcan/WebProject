@@ -18,10 +18,14 @@ namespace TravelTripProjectMVC.Controllers
             return View(bloglar);
         }
 
+        BlogComment bComment = new BlogComment();
+
         public ActionResult BlogDetail(int id)
         {
-            var blogBul = c.Blogs.Where(x => x.Id == id).ToList();
-            return View(blogBul);
+            // var blogBul = c.Blogs.Where(x => x.Id == id).ToList();
+            bComment.Deger1 = c.Blogs.Where(x => x.Id == id).ToList();
+            bComment.Deger2 = c.Comments.Where(x => x.BlogId == id).ToList();
+            return View(bComment);
         }
     }
 }
