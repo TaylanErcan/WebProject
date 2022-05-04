@@ -12,13 +12,16 @@ namespace TravelTripProjectMVC.Controllers
         // GET: Blog
 
         Context c = new Context();
+        BlogComment bComment = new BlogComment();
         public ActionResult Index()
         {
-            var bloglar = c.Blogs.ToList();
-            return View(bloglar);
+            // var bloglar = c.Blogs.ToList();
+            bComment.Deger1 = c.Blogs.ToList();
+            bComment.Deger3 = c.Blogs.OrderByDescending(x => x.Id).Take(2).ToList(); // get last added 2 blogs
+            return View(bComment);
         }
 
-        BlogComment bComment = new BlogComment();
+        
 
         public ActionResult BlogDetail(int id)
         {
