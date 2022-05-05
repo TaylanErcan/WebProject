@@ -29,5 +29,11 @@ namespace TravelTripProjectMVC.Controllers
             var values = context.Blogs.OrderByDescending(x => x.Id).Take(2).ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult Partial2()
+        {
+            var value = context.Blogs.Where(x=> x.Id==5).ToList(); // temporary solution
+            return PartialView(value);
+        }
     }
 }
