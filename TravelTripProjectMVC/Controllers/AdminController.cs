@@ -26,7 +26,34 @@ namespace TravelTripProjectMVC.Controllers
         [HttpPost]
         public ActionResult NewBlog(Blog b) 
         {
-            return View();
+            context.Blogs.Add(b);
+            context.SaveChanges(); // executeNoNQuery muadili
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult BlogDelete(int id)
+        {
+            var blog = context.Blogs.Find(id);
+            context.Blogs.Remove(blog);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetBlog(int id) 
+        {
+            var blog = context.Blogs.Find(id);
+            return View("GetBlog", blog);
+        }
+
+        public ActionResult BlogUpdate(Blog blog) 
+        {
+            var blg = context.Blogs.Find(blog.Id);
+            blg.Aciklama = blog.Aciklama;
+            blg.Title = blog.Title;
+            blg.Date = blog.Date;
+            blg.BlogImagePath = blog.BlogImagePath;
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }   
 
