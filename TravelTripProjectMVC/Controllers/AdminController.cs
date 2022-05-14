@@ -55,6 +55,12 @@ namespace TravelTripProjectMVC.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult GetCommentList()
+        {
+            var values = context.Comments.ToList();
+            return View(values);
+        }
     }   
 
 }

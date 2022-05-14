@@ -256,6 +256,7 @@
     <Content Include="Views\Admin\NewBlog.cshtml" />
     <Content Include="Views\Admin\GetBlog.cshtml" />
     <Content Include="Views\Blog\YorumYap.cshtml" />
+    <Content Include="Views\Admin\GetCommentList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
