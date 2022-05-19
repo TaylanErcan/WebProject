@@ -33,5 +33,11 @@ namespace TravelTripProjectMVC.Controllers
                 return View();
             }
         }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login","Login");
+        }
     }
 }
